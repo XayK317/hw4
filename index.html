@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework 4 App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <button onclick="navigate('home')">Home</button>
+    <button onclick="navigate('dashboard')">Dashboard</button>
+    <button onclick="openModal()">Login</button>
+  </nav>
+
+  <!-- Pages -->
+  <main id="home" class="page active">
+    <h1>Home</h1>
+    <p>Welcome! Click below to test an async data request.</p>
+    <button onclick="loadData()">Fetch Data</button>
+  </main>
+
+  <main id="dashboard" class="page">
+    <h1>Dashboard</h1>
+    <p>Protected area content.</p>
+  </main>
+
+  <!-- Toast Container -->
+  <div id="toast-container"></div>
+
+  <!-- Login Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Login</h2>
+      <form id="login-form" onsubmit="handleLogin(event)" novalidate>
+        <input type="email" id="email" placeholder="Email"><br>
+        <input type="password" id="password" placeholder="Password"><br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
